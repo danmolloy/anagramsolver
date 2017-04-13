@@ -11,7 +11,8 @@ end
 
 RSpec.describe AnagramSolver do
   before do
-    @solver = AnagramSolver.new(['the', 'and'])
+    @solver = AnagramSolver.new(['Dali', 'Laid', 'Better', 'Dial', 'Times', 'Brain', 'Items', 'Sun'])
+    @solver.solve
   end
 
   describe "normalize" do
@@ -46,12 +47,6 @@ RSpec.describe AnagramSolver do
   end
 
   describe "solve" do
-    before do
-      sample_input = ['Dali', 'Laid', 'Better', 'Dial', 'Times', 'Brain', 'Items', 'Sun']
-      @solver = AnagramSolver.new(sample_input)
-      @solver.solve
-    end
-
     it "groups anagrams correctly" do
       expect(@solver.anagrams).to eql([["Dali", "Laid", "Dial"], ["Times", "Items"]])
     end
